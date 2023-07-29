@@ -1,9 +1,11 @@
 from settings import *
 from sys import exit
 
+
 # components
 from game import Game
 from score import Score
+from preview import Preview
 
 # create window
 class Main:
@@ -18,6 +20,7 @@ class Main:
         # components
         self.game = Game() # init the game
         self.score = Score() # init the score
+        self.preview = Preview() # init the preview
 
     def run(self):
         while True:
@@ -33,6 +36,7 @@ class Main:
             # components
             self.game.run() # call the game's run method from game.py
             self.score.run()
+            self.preview.run()
             
             # update the game
             pygame.display.update()
