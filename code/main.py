@@ -3,7 +3,7 @@ from sys import exit
 
 # components
 from game import Game
-
+from score import Score
 
 # create window
 class Main:
@@ -17,6 +17,7 @@ class Main:
 
         # components
         self.game = Game() # init the game
+        self.score = Score() # init the score
 
     def run(self):
         while True:
@@ -28,7 +29,10 @@ class Main:
         
             # display
             self.display_surface.fill(GRAY)
+
+            # components
             self.game.run() # call the game's run method from game.py
+            self.score.run()
             
             # update the game
             pygame.display.update()
